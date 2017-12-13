@@ -1,0 +1,14 @@
+<html>
+    <head>
+        <title>Ubah User</title>
+    </head>
+    <body>
+        <h2>Ubah User</h2>
+        <form action="http://localhost:5000/ubahUser/{{model.username}}" method="post">
+            Username : <br> <input type="text" name="username" size="30" value="{{model.username}}" readonly> <br>
+            Password : <br> <input type="text" name="password" size="30" value="{{model.password}}"> <br>
+            Flag     : <br> <input type="text" name="flag" size="15" value="{{model.flag}}"> <br>
+            <p><input type="submit" value="Simpan"></p>
+        </form>
+    </body>
+</html>

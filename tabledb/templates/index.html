@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>List User dan Login</title>
+    </head>
+    <body>
+        <h2>List User</h2>
+        <table border="1">
+            <tr>
+                <th width="150">Username</th>
+                <th width="150">Password</th>
+                <th width="60">Flag</th>
+                <th width="80">Ubah</th>
+                <th width="80">Hapus</th>
+            </tr>
+            {% for model in container %}
+                <tr>
+                    <td>{{model.username}}</td>
+                    <td>{{model.password}}</td>
+                    <td>{{model.flag}}</td>
+                    <td><a href="http://localhost:5000/ubahUser/{{model.username}}">Ubah</a></td>
+                    <td><a href="http://localhost:5000/hapusUser/{{model.username}}">Hapus</a></td>
+                </tr>
+            {%endfor%}
+        </table>
+        <p><a href="http://localhost:5000/loginUser">Login</a> <a href="http://localhost:5000/tambahUser">Tambah User</a></p>
+    </body>
+</html>
