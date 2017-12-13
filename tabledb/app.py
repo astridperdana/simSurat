@@ -60,6 +60,8 @@ def login():
         password = request.form['password']
         model.setUsername(username)
         model.setPassword(password)
+        ambil_data = model.getDataUser()
+        print(ambil_data)
         if model.auth():
             return render_template('login_sukses.html', username = model.username)
         else:
