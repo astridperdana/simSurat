@@ -57,7 +57,12 @@ class User(object):
         conn.close()
 
     def auth(self):
-        if self.username == 'haha' and self.password == 'haha':
-            return True
+        conn = sqlite3.connect(DB)
+        cursor = conn.cursor()
+        for username, password, flag in cursor.execute("SELECT * FROM users"):
+            if self.username == username and self.password == password:
+                return True, flag
         else:
             return False
+        cursor.close()
+        conn.close()
