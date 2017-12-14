@@ -71,6 +71,20 @@ def login():
     else:
         return render_template('login_form.html')
 
+@app.route('/tambahForm1', methods = ['POST', 'GET'])
+def tambahForm1():
+    if request.method == 'POST':
+        return redirect('http://localhost:5000')
+    else:
+        return render_template('tambah_form1.html')
+
+@app.route('/tambahForm2', methods = ['POST', 'GET'])
+def tambahForm2():
+    if request.method == 'POST':
+        return redirect('http://localhost:5000')
+    else:
+        return render_template('tambah_form2.html')
+
 
 if __name__ == '__main__':
     app.run(debug=True)
