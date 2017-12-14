@@ -85,6 +85,20 @@ def tambahForm2():
     else:
         return render_template('tambah_form2.html')
 
+@app.route('/tambahForm3', methods = ['POST', 'GET'])
+def tambahForm3():
+    if request.method == 'POST':
+        return redirect('http://localhost:5000')
+    else:
+        return render_template('tambah_form3.html')
+
+@app.route('/tambahForm4', methods = ['POST', 'GET'])
+def tambahForm4():
+    if request.method == 'POST':
+        return redirect('http://localhost:5000')
+    else:
+        return render_template('tambah_form4.html')
+
 
 if __name__ == '__main__':
     app.run(debug=True)
