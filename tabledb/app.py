@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect
 from models import User
+from modelform import Form1
 
 app = Flask(__name__)
 
@@ -74,6 +75,19 @@ def login():
 @app.route('/tambahForm1', methods = ['POST', 'GET'])
 def tambahForm1():
     if request.method == 'POST':
+        form1id = request.form['form1_id']
+        nrp = request.form['nrp']
+        nama = request.form['nama']
+        ttl = request.form['ttl']
+        email = request.form['email']
+        alamat_asal = request.form['alamat_asal']
+        sks = request.form['sks']
+        ipk = request.form['ipk']
+        tanggal_proposal = request.form['tanggal_proposal']
+        dospem_ta = request.form['dospem_ta']
+        judul_ta = request.form['judul_ta']
+        model = Form1(form1id, nrp, nama, ttl, email, alamat_asal, sks, ipk, tanggal_proposal, dospem_ta, judul_ta)
+        model.tambah()
         return redirect('http://localhost:5000')
     else:
         return render_template('tambah_form1.html')
